@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { ShineBorder } from "@/components/ui/shine-border";
 
-const LoginPage: React.FC = () => {
+type SignInProps = {
+  onSwitch: () => void;
+};
+
+const LoginPage: React.FC<SignInProps> = ({ onSwitch }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +34,7 @@ const LoginPage: React.FC = () => {
           <button className="flex-1 py-2 rounded-md bg-[#2F5BFF] text-sm font-medium transition hover:-translate-y-px">
             Log In
           </button>
-          <button className="flex-1 py-2 rounded-md text-sm text-gray-400 transition hover:-translate-y-px">
+          <button className="flex-1 py-2 rounded-md text-sm text-gray-400 transition hover:-translate-y-px" onClick={onSwitch}>
             Sign Up
           </button>
         </div>
