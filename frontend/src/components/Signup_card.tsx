@@ -1,4 +1,4 @@
-  import { useState } from "react";
+import { useState } from "react";
 import { ShineBorder } from "./ui/shine-border";
 
 const SignUpcard: React.FC = () => {
@@ -28,86 +28,88 @@ const SignUpcard: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#0E0E15] ">
-      <div className="relative overflow-hidden w-full max-w-md rounded-2xl bg-[#7F60AD]/20 p-7 text-white shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-[#0E0E15]">
+      <div className="relative w-full max-w-sm overflow-hidden rounded-2xl bg-[#7F60AD]/20 p-5 text-white shadow-lg">
 
         {/* Shine Border */}
         <ShineBorder shineColor={["#2F5BFF", "white"]} />
 
-        {/* Tab Switcher */}
-        <div className="flex mb-6 large p-1 bg-[#2A2D4A] rounded-md text-sm font-medium">
-          <button className="flex-1 py-2 rounded-md text-gray-400 text-sm transition hover:-translate-y-px ">
+        {/* Tabs */}
+        <div className="mb-4 flex p-1 bg-[#2A2D4A] rounded-md text-xs font-medium">
+          <button className="flex-1 py-1.5 rounded-md text-gray-400 transition hover:-translate-y-px">
             Log In
           </button>
-          <button className="flex-1 py-2 rounded-md bg-[#2F5BFF] text-sm font-medium transition hover:-translate-y-px">
+          <button className="flex-1 py-1.5 rounded-md bg-[#2F5BFF] transition hover:-translate-y-px">
             Sign Up
           </button>
         </div>
 
         {/* Header */}
-        <h2 className="text-4xl font-bold mb-1 flex items-center justify-center">Create your account</h2>
-        <p className=" text-1xl text-gray-400 font-bold text-sm mb-4 flex items-center justify-center">
+        <h2 className="mb-1 text-center text-2xl font-bold">
+          Create your account
+        </h2>
+        <p className="mb-3 text-center text-xs font-bold text-gray-400">
           Join the community and start sharing today.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
           {error && (
-            <div className="rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-400">
+            <div className="rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-xs text-red-400">
               {error}
             </div>
           )}
 
           {/* Full Name */}
           <div>
-            <label className="text-sm text-gray-300">Full Name</label>
+            <label className="text-xs text-gray-300">Full Name</label>
             <input
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="John Doe"
-              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-2 outline-none focus:border-[#2F5BFF]"
+              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-1.5 text-sm outline-none focus:border-[#2F5BFF]"
             />
           </div>
 
           {/* Username */}
           <div>
-            <label className="text-sm text-gray-300">Username</label>
+            <label className="text-xs text-gray-300">Username</label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="dummydoe"
-              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-2 outline-none focus:border-[#2F5BFF]"
+              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-1.5 text-sm outline-none focus:border-[#2F5BFF]"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="text-sm text-gray-300">Email ID</label>
+            <label className="text-xs text-gray-300">Email ID</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="example@address.com"
-              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-2 outline-none focus:border-[#2F5BFF]"
+              className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-1.5 text-sm outline-none focus:border-[#2F5BFF]"
             />
           </div>
 
           {/* Passwords */}
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             <div className="flex-1">
-              <label className="text-sm text-gray-300">Password</label>
-              <div className="relative ">
+              <label className="text-xs text-gray-300">Password</label>
+              <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                 className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-2 outline-none focus:border-[#2F5BFF]"
+                  className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-1.5 text-sm outline-none focus:border-[#2F5BFF]"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((prev) => !prev)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#2F5BFF]"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-[#2F5BFF]"
                 >
                   {showPassword ? "Hide" : "Show"}
                 </button>
@@ -115,23 +117,23 @@ const SignUpcard: React.FC = () => {
             </div>
 
             <div className="flex-1">
-              <label className="text-sm text-gray-300">
+              <label className="text-xs text-gray-300">
                 Confirm Password
               </label>
               <input
                 type={showPassword ? "text" : "password"}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-               className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-2 outline-none focus:border-[#2F5BFF]"
+                className="mt-1 w-full rounded-md bg-[#2A2D4A] border border-white/20 px-3 py-1.5 text-sm outline-none focus:border-[#2F5BFF]"
               />
             </div>
           </div>
 
           {/* Terms */}
-          <div className="flex items-center text-xs text-gray-400">
+          <div className="flex items-center text-[11px] text-gray-400">
             <input type="checkbox" className="mr-2" />
-            By signing up, you agree to our{" "}
-            <span className="text-[#2F5BFF] underline ml-1 cursor-pointer">
+            By signing up, you agree to our
+            <span className="ml-1 cursor-pointer underline text-[#2F5BFF]">
               Terms & Privacy Policy
             </span>
           </div>
@@ -139,13 +141,11 @@ const SignUpcard: React.FC = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full mt-2 bg-[#2F5BFF] py-2 rounded-md font-medium transition hover:-translate-y-px"
+            className="w-full bg-[#2F5BFF] py-1.5 text-sm rounded-md font-medium transition hover:-translate-y-px"
           >
             Create Account
           </button>
         </form>
-
-        
       </div>
     </div>
   );
