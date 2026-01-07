@@ -1,0 +1,341 @@
+/* SHARED */
+.section-title {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* =================== FRAMES SECTION =================== */
+.frames-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #020617 0%, #0a0f2e 50%, #0a0f2e 100%);
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.frames-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-infinite 20s linear infinite;
+}
+
+@keyframes scroll-infinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.frames-content {
+  display: inline-flex;
+  gap: 60px;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.hashtag-inline {
+  color: white;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.hashtag-inline:hover {
+  transform: scale(1.1);
+  color: #a78bfa;
+}
+
+/* Outline style for specific hashtags */
+.hashtag-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px white;
+  text-stroke: 1.5px white;
+}
+
+.hashtag-outline:hover {
+  -webkit-text-stroke: 1.5px #a78bfa;
+  text-stroke: 1.5px #a78bfa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .frames-content {
+    gap: 40px;
+  }
+  
+  /* Scale down hashtag sizes for mobile */
+  .hashtag-inline {
+    font-size: 0.8em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .frames-content {
+    gap: 30px;
+  }
+  
+  .hashtag-inline {
+    font-size: 0.7em !important;
+  }
+}
+/* =================== FEATURES SECTION =================== */
+.features-section {
+  padding: 100px 60px;
+  background: radial-gradient(
+      circle at top,
+      rgba(139, 92, 246, 0.08),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0a0f2e 0%, #020617 50%, #020617 100%);
+  text-align: center;
+}
+
+.features-heading {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 70px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 24px;
+  padding: 40px 24px;
+  color: white;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(148, 163, 184, 0.3), 
+    transparent);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.feature-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  transform: scale(1.1) rotateZ(5deg);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+  line-height: 1.3;
+}
+
+.feature-card p {
+  font-size: 15px;
+  opacity: 0.7;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+}
+
+/* =================== TESTIMONIALS SECTION =================== */
+.testimonials-section {
+  padding: 100px 60px;
+  background: linear-gradient(180deg, #020617, #0a0f2e);
+  text-align: center;
+}
+
+.testimonials-section .section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 24px;
+  padding: 40px 32px;
+  color: white;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(148, 163, 184, 0.3), 
+    transparent);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.2);
+}
+
+.quote-icon {
+  font-size: 56px;
+  line-height: 1;
+  color: rgba(148, 163, 184, 0.25);
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
+
+.testimonial-text {
+  font-size: 17px;
+  margin: 0 0 28px;
+  color: #e2e8f0;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.author {
+  padding-top: 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.author-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.author-uni {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* =================== RESPONSIVE DESIGN =================== */
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .features-heading,
+  .testimonials-section .section-title {
+    font-size: 36px;
+  }
+  
+  .hashtag-inline {
+    font-size: 24px;
+  }
+  
+  .frames-content {
+    gap: 30px;
+  }
+  
+  .frames-section,
+  .features-section,
+  .testimonials-section {
+    padding: 80px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-heading,
+  .testimonials-section .section-title {
+    font-size: 28px;
+  }
+  
+  .hashtag-inline {
+    font-size: 18px;
+  }
+  
+  .frames-content {
+    gap: 20px;
+  }
+}
