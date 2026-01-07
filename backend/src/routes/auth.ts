@@ -3,6 +3,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { z } from "zod";
 import { UserModel } from "../models/user";
+import editavatarrouter from "./editavatar";
+import editbiorouter from "./editbio";
+import editusernamerouter from "./editusername";
 
 const authRouter = Router();
 const SALT_ROUNDS = 10;

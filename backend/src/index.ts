@@ -1,10 +1,15 @@
+
+import dotenv from "dotenv";
+dotenv.config(); // MUST be first
+
 import express, { Request, Response } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import { connectDB } from "./config/db";
 import authRouter from "./routes/auth";
+import editusernamerouter from "./routes/editusername";
+import editbiorouter from "./routes/editbio";
+import editavatarrouter from "./routes/editavatar";
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -32,6 +37,11 @@ app.get("/", (req:Request,res: Response) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/",editavatarrouter)
+app.use("/",editbiorouter)
+app.use("/",editusernamerouter)
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

@@ -30,6 +30,25 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    avatar_url:{
+     type:String,
+     trim:true,
+     default:""
+    },
+    bio:{
+      type:String,
+      maxlength:150,
+      trim:true,
+      default:""
+    },
+    following_count:{
+      type:Number,
+      default:0
+    },
+    followers_count:{
+      type:Number,
+      default:0
+    }
   },
   {
     timestamps: true,
