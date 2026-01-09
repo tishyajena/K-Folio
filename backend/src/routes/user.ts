@@ -4,7 +4,7 @@ import { getProfile, updateProfile, deleteProfile } from '../controllers/userCon
 import { authMiddleware } from '../middleware/auth';
 import {updateBio} from '../controllers/editbioController'
 import {updateUsername} from '../controllers/editusernameController'
-import { updateAvatar } from '../controllers/editavatarController';
+import { updateAvatar } from '../controllers/editavatarcontroller';
 
 
 const router = Router();
