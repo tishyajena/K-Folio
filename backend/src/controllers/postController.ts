@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { Post } from "../models/post";
-import User from "../models/user";
 import { CreatePostInput } from "../validators/postSchema";
 
 export const createPost = async (req: Request & { userId?: string }, res: Response) => {

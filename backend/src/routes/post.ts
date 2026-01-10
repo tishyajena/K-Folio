@@ -1,9 +1,17 @@
 import { Router } from "express";
 import { createPost } from "../controllers/postController";
 import { authMiddleware } from "../middleware/auth";
-import { createPostSchema } from "../validators/postSchema";
+import {handleLike} from "../controllers/actionController";
+import {handleComment} from "../controllers/actionController";
 
 const router = Router();
-router.post("/", authMiddleware, createPost);
-router.post("/like",authMiddleware,)
+
+// CREATE POST
+router.post("/create", authMiddleware, createPost);
+
+// UPDATE POST
+//router.put("/update/:postId", authMiddleware, updatePost);
+
+router.post('/:postId/like',authMiddleware,handleLike);
+router.post('/:postId/comment',authMiddleware,handleComment)
 export default router;
