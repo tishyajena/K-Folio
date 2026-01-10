@@ -1,10 +1,10 @@
 import "../../components/Landing Page/landing.css";
 import { useEffect, useState } from "react";
-import Footer from "../../components/Landing Page/Footer";
+import Footer from "../../components/Landing/Footer";
 import Hero from "../../components/Landing Page/Hero";
-import LandingBackground from "../../components/Landing Page/LandingBackground";
-import WhyKfolio from "../../components/Landing Page/whyKfolio";
-import Navbar from "../../components/Landing Page/navbar";
+import LandingBackground from "../../components/Landing/LandingBackground";
+import WhyKfolio from "../../components/Landing/whyKfolio";
+import Navbar from "../../components/Landing/navbar";
 import Features from "../../components/Landing Page/Features";
 import Frames from "../../components/Landing Page/Frames";
 import Testimonials from "../../components/Landing Page/Testimonials";
