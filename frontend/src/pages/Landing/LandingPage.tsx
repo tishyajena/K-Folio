@@ -1,13 +1,15 @@
+import "../../components/Landing Page/landing.css";
 import { useEffect, useState } from "react";
-import "../../components/Landing/landing.css";
-import LandingBackground from "../../components/Landing/LandingBackground";
-import WhyKfolio from "../../components/Landing/whyKfolio";
-import Hero from "../../components/Landing/Hero";
-import Frames from "../../components/Landing/Frames";
-import Features from "../../components/Landing/Features";
-import Testimonials from "../../components/Landing/Testimonials";
-import Footer from "../../components/Landing/Footer";
-import Navbar from "../../components/Landing/navbar";
+import Footer from "../../components/Landing Page/Footer";
+import Hero from "../../components/Landing Page/Hero";
+import LandingBackground from "../../components/Landing Page/LandingBackground";
+import WhyKfolio from "../../components/Landing Page/whyKfolio";
+import Navbar from "../../components/Landing Page/navbar";
+import Features from "../../components/Landing Page/Features";
+import Frames from "../../components/Landing Page/Frames";
+import Testimonials from "../../components/Landing Page/Testimonials";
+
+
 
 // LandingPage
 // Orchestrates the landing page layout and tracks
@@ -52,11 +54,15 @@ export default function LandingPage() {
         {/* Offset content for fixed navbar */}
         <div style={{ paddingTop: "7rem" }}>
           <Hero />
-          <Frames />
-          <Features />
-          <Testimonials />
-          <WhyKfolio />
-        </div>
+          <section data-section="frames">
+  <Frames />
+</section>
+          <div style={{ all: "initial", display: "block", fontFamily: "inherit" }}>
+    <Features />
+  </div>
+  <Testimonials />
+  <WhyKfolio />
+ </div>
       </LandingBackground>
 
       <Footer activeSection={active} />

@@ -7,7 +7,7 @@ export default function Frames() {
       size: 46,
       letterSpacing: "0.08em",
       opacity: 1,
-      verticalOffset: -15
+      verticalOffset: 15
     },
     {
       text: "#I❤️Kfolio",
@@ -53,7 +53,7 @@ export default function Frames() {
       size: 24,
       letterSpacing: "0.15em",
       opacity: 0.5,
-      verticalOffset: -15
+      verticalOffset: 15
     },
     {
       text: "#maincharacter",
@@ -63,7 +63,7 @@ export default function Frames() {
       letterSpacing: "0.05em",
       opacity: 0.6,
       outline: true,
-      verticalOffset: -15
+      verticalOffset: 15
     }
   ];
 
